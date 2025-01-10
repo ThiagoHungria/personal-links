@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -8,97 +9,85 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
+
 <body>
-    <!-- Teias decorativas -->
+    <!-- Minhas teias decorativas -->
     <div class="web-corner web-top-left"></div>
     <div class="web-corner web-top-right"></div>
+    <div class="web-corner web-bottom-left"></div>
+    <div class="web-corner web-bottom-right"></div>
 
     <div class="container">
+        <!-- Minha apresentação -->
         <div class="profile">
             <div class="profile-image">
                 <img src="sua-foto.jpg" alt="Thiago Hungria">
             </div>
-            <div class="name-container">
-                <h1>Thiago Hungria</h1>
-                <div class="nickname">TH</div>
-            </div>
+            <h1>Thiago Hungria</h1>
+            <div class="nickname">TH</div>
             <p class="bio">
                 Sou programador/desenvolvedor de sistemas web e sites desde os meus 13 anos, especializado em desenvolvimento mobile para Android e iOS em Flutter/Dart. Sou desenvolvedor Full stack, porém atuo mais com o Back-end, e atuo como freelancer.
             </p>
         </div>
 
+        <!-- Minhas áreas -->
         <div class="dev-categories">
-            <div class="dev-category" data-aos="fade-up">
-                <i class="fas fa-laptop-code"></i>
-                <span>Dev. Web</span>
+            <div class="dev-category">
+                <i class="fas fa-laptop-code"></i> Dev. Web
             </div>
-            <div class="dev-category" data-aos="fade-up" data-aos-delay="100">
-                <i class="fas fa-mobile-alt"></i>
-                <span>Dev. Mobile</span>
+            <div class="dev-category">
+                <i class="fas fa-mobile-alt"></i> Dev. Mobile
             </div>
-            <div class="dev-category" data-aos="fade-up" data-aos-delay="200">
-                <i class="fas fa-layer-group"></i>
-                <span>Full Stack</span>
+            <div class="dev-category">
+                <i class="fas fa-layer-group"></i> Full Stack
             </div>
         </div>
 
+        <!-- Minhas tecnologias -->
         <div class="tech-stack">
-            <div class="tech-badge">HTML</div>
-            <div class="tech-badge">CSS</div>
-            <div class="tech-badge">JavaScript</div>
-            <div class="tech-badge">Dart</div>
-            <div class="tech-badge">Python</div>
-            <div class="tech-badge">React</div>
-            <div class="tech-badge">Node.js</div>
-            <div class="tech-badge">SQL</div>
-            <div class="tech-badge">MongoDB</div>
+            <span class="tech-badge" data-tooltip="HyperText Markup Language">HTML</span>
+            <span class="tech-badge" data-tooltip="Cascading Style Sheets">CSS</span>
+            <span class="tech-badge" data-tooltip="Linguagem de Programação Web">JavaScript</span>
+            <span class="tech-badge" data-tooltip="Framework Mobile Multiplataforma">Dart</span>
+            <span class="tech-badge" data-tooltip="Linguagem de Programação">Python</span>
+            <span class="tech-badge" data-tooltip="Biblioteca JavaScript">React</span>
+            <span class="tech-badge" data-tooltip="Runtime JavaScript">Node.js</span>
+            <span class="tech-badge" data-tooltip="Banco de Dados Relacional">SQL</span>
+            <span class="tech-badge" data-tooltip="Banco de Dados NoSQL">MongoDB</span>
         </div>
 
+        <!-- Minhas redes -->
         <div class="social-grid">
-            <a href="#" class="social-item" target="_blank" rel="noopener noreferrer">
+            <a href="#" class="social-item" target="_blank">
                 <i class="fab fa-github"></i>
             </a>
-            <a href="#" class="social-item" target="_blank" rel="noopener noreferrer">
+            <a href="#" class="social-item" target="_blank">
                 <i class="fab fa-gitlab"></i>
             </a>
-            <a href="#" class="social-item" target="_blank" rel="noopener noreferrer">
+            <a href="#" class="social-item" target="_blank">
                 <i class="fab fa-linkedin"></i>
             </a>
-            <a href="#" class="social-item" target="_blank" rel="noopener noreferrer">
+            <a href="#" class="social-item" target="_blank">
                 <i class="fab fa-instagram"></i>
             </a>
         </div>
 
+        <!-- Meus botões -->
         <div class="contact-section">
             <a href="#" class="contact-button">
                 <i class="fas fa-briefcase"></i>
-                Ver Portfólio
+                <span>Ver Portfólio</span>
             </a>
             <a href="#" class="contact-button">
                 <i class="fab fa-whatsapp"></i>
-                Contato
+                <span>Contato</span>
             </a>
         </div>
-
-        <footer>
-            <p>Desenvolvido com <i class="fas fa-code"></i> por TH</p>
-        </footer>
     </div>
 
-    <script>
-        // Adiciona índices para animações
-        document.querySelectorAll('.tech-badge').forEach((badge, index) => {
-            badge.style.setProperty('--i', index + 1);
-        });
-
-        document.querySelectorAll('.social-item').forEach((item, index) => {
-            item.style.setProperty('--i', index + 1);
-        });
-
-        // Animação ao recarregar a página
-        window.addEventListener('load', () => {
-            document.body.style.opacity = '1';
-        });
-    </script>
+    <div class="corner-footer">
+        <i class="fas fa-code"></i> com <i class="fas fa-heart"></i> por TH
+    </div>
 </body>
-</html> 
+
+</html>
