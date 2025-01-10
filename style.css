@@ -330,11 +330,15 @@ body {
     bottom: 20px;
     left: 50%;
     transform: translateX(-50%);
-    background: rgba(20, 20, 20, 0.7);
+    background: rgba(20, 20, 20, 0.9);
     backdrop-filter: blur(10px);
     padding: 8px 15px;
     border-radius: 20px;
     color: var(--text-secondary);
+    font-size: 0.9rem;
+    white-space: nowrap;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
 
 
@@ -363,7 +367,13 @@ body {
         font-size: 0.9rem;
     }
     .social-grid {
-        gap: 0.8rem;
+        gap: 1.2rem;
+        margin: 2rem 0;
+    }
+    .social-item {
+        width: 50px;
+        height: 50px;
+        background: rgba(20, 20, 20, 0.9);
     }
     .contact-section {
         flex-direction: column;
@@ -404,6 +414,43 @@ body {
             animation-iteration-count: 1 !important;
             transition-duration: 0.01ms !important;
             scroll-behavior: auto !important;
+        }
+    }
+    .container {
+        padding: 1rem 1rem 100px 1rem;
+    }
+    .corner-footer {
+        bottom: 15px;
+        padding: 10px 20px;
+        font-size: 0.85rem;
+        background: rgba(10, 10, 10, 0.95);
+    }
+    .social-item:active {
+        transform: scale(0.95);
+        transition: transform 0.1s ease;
+    }
+    .contact-button {
+        padding: 12px 24px;
+        margin: 0.5rem 0;
+    }
+    .contact-button:active {
+        transform: scale(0.98);
+        opacity: 0.9;
+        transition: all 0.1s ease;
+    }
+    @media (hover: none) {
+        .social-item:hover,
+        .contact-button:hover,
+        .dev-category:hover,
+        .tech-badge:hover {
+            transform: none;
+        }
+        .social-item:active,
+        .contact-button:active,
+        .dev-category:active,
+        .tech-badge:active {
+            transform: scale(0.95);
+            transition: transform 0.1s ease;
         }
     }
 }
@@ -550,5 +597,21 @@ body {
     to {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+
+
+/* Melhorias gerais de touch */
+
+@supports (-webkit-touch-callout: none) {
+    /* Previne comportamentos indesejados em iOS */
+    * {
+        -webkit-tap-highlight-color: transparent;
+    }
+    .container {
+        padding-bottom: env(safe-area-inset-bottom, 100px);
+    }
+    .corner-footer {
+        bottom: max(15px, env(safe-area-inset-bottom, 15px));
     }
 }
