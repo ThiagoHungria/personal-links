@@ -91,14 +91,6 @@ body {
     transition: var(--transition);
 }
 
-.profile-image::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(circle at 30% 30%, transparent 0%, rgba(185, 28, 28, 0.2) 100%);
-    pointer-events: none;
-}
-
 .profile h1 {
     font-size: var(--font-size-h1);
     margin: 1rem 0 0.5rem;
@@ -155,7 +147,7 @@ body {
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient( 90deg, transparent, rgba(185, 28, 28, 0.2), transparent);
+    background: linear-gradient(90deg, transparent, rgba(185, 28, 28, 0.2), transparent);
     transition: 0.5s;
 }
 
@@ -177,10 +169,6 @@ body {
 .dev-category:hover i {
     color: var(--spider-blue);
     transform: rotate(360deg);
-}
-
-.dev-category:not(:hover) {
-    animation: fadeInOut 1s ease;
 }
 
 
@@ -237,96 +225,9 @@ body {
     border: 1px solid rgba(185, 28, 28, 0.1);
 }
 
-.social-item::before {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: radial-gradient(circle at center, var(--spider-red), transparent 70%);
-    opacity: 0;
-    transition: var(--transition);
-}
-
-.social-item:hover::before {
-    opacity: 0.3;
-    transform: scale(1.2);
-}
-
 .social-item:hover {
     transform: translateY(-3px) scale(1.1);
     background: linear-gradient(135deg, rgba(185, 28, 28, 0.9), rgba(30, 64, 175, 0.9));
-}
-
-
-/* Contact Section */
-
-.contact-section {
-    display: flex;
-    gap: 1.5rem;
-    justify-content: center;
-    margin: 2.5rem 0;
-}
-
-.contact-button {
-    padding: 0.8rem 1.8rem;
-    border-radius: 12px;
-    font-weight: 500;
-    letter-spacing: 0.5px;
-    transition: var(--transition);
-    text-decoration: none;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    position: relative;
-    overflow: hidden;
-    color: var(--text-primary);
-    z-index: 1;
-    animation: slideUp 0.5s ease backwards;
-}
-
-.contact-button::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(255, 255, 255, 0.1);
-    transform: translateX(-100%) rotate(45deg);
-    transition: 0.5s;
-    z-index: -1;
-}
-
-.contact-button:hover::before {
-    transform: translateX(100%) rotate(45deg);
-}
-
-.contact-button:first-child {
-    background: rgba(185, 28, 28, 0.9);
-    box-shadow: 0 4px 15px rgba(185, 28, 28, 0.3);
-    animation-delay: 0.2s;
-}
-
-.contact-button:last-child {
-    background: rgba(30, 64, 175, 0.9);
-    box-shadow: 0 4px 15px rgba(30, 64, 175, 0.3);
-    animation-delay: 0.4s;
-}
-
-.contact-button:hover {
-    transform: translateY(-3px);
-}
-
-.contact-button:active {
-    transform: translateY(-1px);
-}
-
-.contact-button i {
-    transition: var(--transition);
-}
-
-.contact-button:hover i {
-    transform: scale(1.2);
 }
 
 
@@ -338,307 +239,23 @@ body {
     left: 50%;
     transform: translateX(-50%);
     width: fit-content;
-    min-width: 150px;
     background: rgba(10, 10, 10, 0.95);
-    backdrop-filter: blur(10px);
     padding: 8px 20px;
     border-radius: 20px 20px 0 0;
     text-align: center;
-    font-size: 0.85rem;
-    z-index: 1000;
+    font-size: var(--font-size-footer);
     border: 1px solid rgba(255, 255, 255, 0.1);
-    border-bottom: none;
-    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
 }
 
 
-/* Media Queries */
+/* Responsividade */
 
 @media (max-width: 768px) {
     .dev-categories {
         flex-direction: column;
-        align-items: center;
-        gap: 1rem;
-        width: 100%;
-        max-width: 300px;
-        margin: 2rem auto;
-    }
-    .dev-category {
-        width: 100%;
-        text-align: center;
-        justify-content: center;
-        transition: transform 0.2s ease;
-    }
-    .tech-stack {
-        gap: 0.6rem;
-        padding: 0 0.5rem;
-    }
-    .tech-badge {
-        padding: 0.6rem 1rem;
-        font-size: 0.9rem;
-        transition: transform 0.2s ease;
-    }
-    .social-grid {
-        gap: 1.2rem;
-        margin: 2rem 0;
-    }
-    .social-item {
-        width: 50px;
-        height: 50px;
-        background: rgba(20, 20, 20, 0.9);
-        transition: transform 0.2s ease;
-    }
-    .contact-section {
-        flex-direction: column;
-        gap: 1rem;
-        width: 100%;
-        max-width: 300px;
-        margin: 2rem auto;
-    }
-    .contact-button {
-        width: 100%;
-        justify-content: center;
-        transition: transform 0.2s ease;
-    }
-    @media (prefers-reduced-motion: no-preference) {
-        .profile-image {
-            animation: float 4s ease-in-out infinite;
-        }
-        .dev-category:hover {
-            transform: translateY(-2px);
-        }
-        .tech-badge:hover {
-            transform: translateY(-2px);
-        }
-        .social-item:hover {
-            transform: translateY(-2px);
-        }
-        .contact-button:hover {
-            transform: translateY(-2px);
-        }
-        * {
-            -webkit-overflow-scrolling: touch;
-        }
-    }
-    @media (prefers-reduced-motion: reduce) {
-        *,
-        *::before,
-        *::after {
-            animation-duration: 0.01ms !important;
-            animation-iteration-count: 1 !important;
-            transition-duration: 0.01ms !important;
-            scroll-behavior: auto !important;
-        }
-    }
-    .container {
-        padding: 1rem 1rem 80px 1rem;
-        position: relative;
     }
     .corner-footer {
-        padding: 8px 15px;
+        padding: 10px;
         font-size: 0.8rem;
-    }
-    .social-item:active {
-        transform: scale(0.95);
-        transition: transform 0.2s ease;
-    }
-    .contact-button {
-        font-size: 0.9rem;
-        padding: 0.7rem 1.2rem;
-    }
-    .contact-button:active {
-        transform: scale(0.98);
-        opacity: 0.9;
-        transition: all 0.2s ease;
-    }
-    @media (hover: none) {
-        .dev-category:hover,
-        .tech-badge:hover,
-        .social-item:hover,
-        .contact-button:hover {
-            transform: none;
-            animation: none;
-        }
-        .dev-category:hover i {
-            transform: none;
-            color: inherit;
-        }
-        .dev-category::before {
-            display: none;
-        }
-    }
-    * {
-        animation-duration: 0.1s !important;
-        transition-duration: 0.2s !important;
-    }
-}
-
-@media (hover: none) {
-    .dev-category:active,
-    .tech-badge:active,
-    .social-item:active,
-    .contact-button:active {
-        transform: scale(0.95);
-        transition: transform 0.2s ease;
-    }
-}
-
-
-/* Animations */
-
-@keyframes float {
-    0%,
-    100% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-10px);
-    }
-}
-
-@keyframes slideIn {
-    from {
-        transform: translateY(-20px);
-        opacity: 0;
-    }
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(10px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes pulse {
-    0% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.1);
-    }
-    100% {
-        transform: scale(1);
-    }
-}
-
-@keyframes webPulse {
-    0%,
-    100% {
-        transform: scale(1);
-        opacity: 0.15;
-    }
-    50% {
-        transform: scale(1.1);
-        opacity: 0.2;
-    }
-}
-
-@keyframes bgMove {
-    0% {
-        background-position: 0 0;
-    }
-    100% {
-        background-position: 50px 50px;
-    }
-}
-
-@keyframes glowBorder {
-    0%,
-    100% {
-        box-shadow: 0 0 20px rgba(185, 28, 28, 0.5);
-    }
-    50% {
-        box-shadow: 0 0 30px rgba(30, 64, 175, 0.5);
-    }
-}
-
-@keyframes fadeInOut {
-    0% {
-        opacity: 1;
-    }
-    50% {
-        opacity: 0.5;
-    }
-    100% {
-        opacity: 1;
-    }
-}
-
-.social-item:hover {
-    transform: translateY(-3px) scale(1.1);
-    background: linear-gradient(135deg, rgba(185, 28, 28, 0.9), rgba(30, 64, 175, 0.9));
-}
-
-
-/* Animação para entrada dos botões */
-
-.contact-button {
-    animation: slideUp 0.5s ease backwards;
-}
-
-.contact-button:first-child {
-    animation-delay: 0.2s;
-}
-
-.contact-button:last-child {
-    animation-delay: 0.4s;
-}
-
-
-/* Nova animação */
-
-@keyframes slideUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(10px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-
-/* Melhorias gerais de touch */
-
-@supports (-webkit-touch-callout: none) {
-    /* Previne comportamentos indesejados em iOS */
-    * {
-        -webkit-tap-highlight-color: transparent;
-    }
-    .container {
-        padding-bottom: env(safe-area-inset-bottom, 100px);
-    }
-    .corner-footer {
-        bottom: max(15px, env(safe-area-inset-bottom, 15px));
-    }
-}
-
-@supports (padding: max(0px)) {
-    .corner-footer {
-        padding-bottom: max(10px, env(safe-area-inset-bottom));
-    }
-    .container {
-        padding-bottom: calc(60px + env(safe-area-inset-bottom, 0px));
     }
 }
