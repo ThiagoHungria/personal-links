@@ -1,0 +1,327 @@
+/* Minhas cores favoritas do Homem-Aranha */
+:root {
+    --spider-red: #e23636;
+    --spider-blue: #0148ca;
+    --spider-dark-blue: #013a9f;
+    --spider-dark-red: #aa1f1f;
+    --dark-bg: #030303;
+    --text-color: #ffffff;
+    --text-secondary: #94a3b8;
+}
+
+/* Minha base do site */
+html {
+    scroll-behavior: smooth;
+    background: var(--dark-bg);
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-color);
+    line-height: 1.6;
+    min-height: 100vh;
+    overflow-x: hidden;
+    background: radial-gradient(circle at top right, #060606 0%, var(--dark-bg) 100%);
+}
+
+/* Meu container principal */
+.container {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 4rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0;
+    animation: fadeInScale 1s ease-out forwards;
+}
+
+/* Minha apresentação pessoal */
+.profile {
+    text-align: center;
+    margin-bottom: 3.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 600px;
+}
+
+/* Minha foto com efeito aranha */
+.profile-image {
+    width: 140px;
+    height: 140px;
+    margin-bottom: 1.5rem;
+    position: relative;
+    border-radius: 50%;
+    padding: 4px;
+    background: linear-gradient(45deg, var(--spider-red), var(--spider-blue));
+    animation: fadeInScale 1s ease-out, glowPulse 3s infinite;
+}
+
+.profile-image::before {
+    content: '';
+    position: absolute;
+    inset: -3px;
+    border-radius: 50%;
+    background: linear-gradient(45deg, var(--spider-red), var(--spider-blue));
+    opacity: 0.5;
+    animation: rotate 3s linear infinite;
+}
+
+.profile-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid var(--dark-bg);
+}
+
+/* Meu nome com estilo */
+.profile h1 {
+    font-size: 2.5rem;
+    background: linear-gradient(45deg, var(--spider-red), var(--spider-blue));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 0.2rem;
+    font-weight: 600;
+    animation: slideUpFade 1s ease-out;
+    text-shadow: 0 0 30px rgba(226, 54, 54, 0.3);
+}
+
+/* Meu apelido */
+.nickname {
+    font-size: 1.1rem;
+    color: var(--spider-blue);
+    margin-bottom: 1.5rem;
+    animation: slideUpFade 1s ease-out 0.2s backwards;
+}
+
+/* Minha descrição */
+.bio {
+    color: var(--text-secondary);
+    font-size: 1rem;
+    line-height: 1.8;
+    max-width: 600px;
+    margin-bottom: 3rem;
+    animation: slideUpFade 1s ease-out 0.4s backwards;
+    padding: 0 1rem;
+}
+
+/* Minhas áreas de desenvolvimento */
+.dev-categories {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    width: 100%;
+    max-width: 800px;
+    margin-bottom: 3rem;
+}
+
+.dev-category {
+    background: rgba(20, 20, 20, 0.8);
+    padding: 1.5rem;
+    border-radius: 12px;
+    text-align: center;
+    border: 1px solid rgba(226, 54, 54, 0.3);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+}
+
+.dev-category:hover {
+    transform: translateY(-5px);
+    border-color: var(--spider-red);
+    box-shadow: 0 10px 20px rgba(226, 54, 54, 0.1);
+}
+
+.dev-category i {
+    font-size: 1.8rem;
+    color: var(--spider-red);
+    margin-bottom: 0.8rem;
+    transition: all 0.3s ease;
+}
+
+.dev-category:hover i {
+    transform: scale(1.1);
+    color: var(--spider-blue);
+}
+
+/* Minhas tecnologias */
+.tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    justify-content: center;
+    margin-bottom: 3rem;
+    max-width: 600px;
+}
+
+.tech-badge {
+    background: rgba(20, 20, 20, 0.8);
+    padding: 0.6rem 1.2rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    border: 1px solid rgba(226, 54, 54, 0.2);
+    transition: all 0.3s ease;
+}
+
+.tech-badge:hover {
+    transform: translateY(-3px);
+    background: var(--spider-red);
+    color: white;
+    border-color: transparent;
+}
+
+/* Minhas redes sociais */
+.social-grid {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 2.5rem;
+}
+
+.social-item {
+    color: var(--text-secondary);
+    font-size: 1.8rem;
+    transition: all 0.3s ease;
+}
+
+.social-item:hover {
+    color: var(--spider-red);
+    transform: translateY(-3px) scale(1.1);
+}
+
+/* Meus botões de contato */
+.contact-section {
+    display: flex;
+    gap: 1.2rem;
+    margin-bottom: 3rem;
+}
+
+.contact-button {
+    background: var(--spider-dark-blue);
+    color: white;
+    padding: 0.8rem 2rem;
+    border-radius: 25px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    font-size: 0.95rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.contact-button:hover {
+    background: var(--spider-blue);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(1, 72, 202, 0.3);
+}
+
+/* Minha assinatura */
+footer {
+    text-align: center;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    opacity: 0.8;
+    margin-top: 1rem;
+}
+
+footer i {
+    color: var(--spider-red);
+    margin: 0 0.2rem;
+}
+
+/* Minhas teias decorativas */
+.web-corner {
+    position: fixed;
+    width: 300px;
+    height: 300px;
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0.08;
+}
+
+.web-top-left {
+    top: -50px;
+    left: -50px;
+    background-image: url("data:image/svg+xml,%3Csvg width='300' height='300' viewBox='0 0 300 300' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,0 L300,300 M0,150 L150,300 M150,0 L300,150' stroke='%23e23636' stroke-width='1' fill='none'/%3E%3C/svg%3E");
+    animation: webRotate 30s linear infinite;
+}
+
+.web-top-right {
+    top: -50px;
+    right: -50px;
+    background-image: url("data:image/svg+xml,%3Csvg width='300' height='300' viewBox='0 0 300 300' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M300,0 L0,300 M300,150 L150,300 M150,0 L0,150' stroke='%230148ca' stroke-width='1' fill='none'/%3E%3C/svg%3E");
+    animation: webRotate 30s linear infinite reverse;
+}
+
+/* Minhas animações */
+@keyframes webRotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes slideUpFade {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes glowPulse {
+    0% { box-shadow: 0 0 5px var(--spider-red); }
+    50% { box-shadow: 0 0 15px var(--spider-red); }
+    100% { box-shadow: 0 0 5px var(--spider-red); }
+}
+
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* Minha responsividade */
+@media (max-width: 768px) {
+    .container {
+        padding: 2rem 1rem;
+    }
+    
+    .dev-categories {
+        grid-template-columns: 1fr;
+    }
+    
+    .contact-section {
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .contact-button {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .web-corner {
+        width: 200px;
+        height: 200px;
+    }
+}
