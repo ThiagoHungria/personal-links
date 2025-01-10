@@ -8,160 +8,27 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
-    <style>
-        /* Reset básico */
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Poppins', sans-serif;
-            background: #0A0A0A;
-            color: #FFFFFF;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-        }
-        /* Container principal */
-        
-        .container {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 20px;
-        }
-        /* Estilização do rodapé */
-        
-        .corner-footer {
-            position: fixed;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 10px 20px;
-            background: rgba(10, 10, 10, 0.9);
-            border-radius: 20px 20px 0 0;
-            font-size: 0.9rem;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.5);
-            z-index: 1000;
-        }
-        
-        .corner-footer i {
-            margin: 0 5px;
-            color: #B91C1C;
-        }
-        /* Elementos de estilo adicionais */
-        
-        .profile-image img {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            border: 3px solid #1E40AF;
-        }
-        
-        .dev-categories {
-            margin: 20px 0;
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-        }
-        
-        .dev-category {
-            padding: 10px 20px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 5px;
-            font-size: 0.9rem;
-        }
-        
-        .tech-stack {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 10px;
-            margin-top: 20px;
-        }
-        
-        .tech-badge {
-            padding: 5px 10px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 5px;
-            font-size: 0.8rem;
-            cursor: pointer;
-        }
-        
-        .social-grid {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin: 20px 0;
-        }
-        
-        .social-item {
-            font-size: 1.5rem;
-            color: #1E40AF;
-            transition: color 0.3s;
-        }
-        
-        .social-item:hover {
-            color: #B91C1C;
-        }
-        
-        .contact-section {
-            margin: 20px 0;
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-        }
-        
-        .contact-button {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            padding: 10px 20px;
-            background: #1E40AF;
-            color: #FFFFFF;
-            border-radius: 5px;
-            text-decoration: none;
-            font-size: 0.9rem;
-            transition: background 0.3s;
-        }
-        
-        .contact-button:hover {
-            background: #B91C1C;
-        }
-    </style>
 </head>
 
 <body>
-    <!-- Minhas teias decorativas -->
-    <div class="web-corner web-top-left"></div>
-    <div class="web-corner web-top-right"></div>
-    <div class="web-corner web-bottom-left"></div>
-    <div class="web-corner web-bottom-right"></div>
+    <div id="particles-js"></div>
 
-    <div class="container">
-        <!-- Minha apresentação -->
-        <div class="profile">
+    <main class="container">
+        <!-- Profile Section -->
+        <section class="profile">
             <div class="profile-image">
                 <img src="sua-foto.jpg" alt="Thiago Hungria">
             </div>
             <h1>Thiago Hungria</h1>
-            <div class="nickname">TH</div>
-            <p class="bio">
+            <p class="nickname">TH</p>
+
+            <!-- Bio -->
+            <p class="bio-text">
                 Sou programador/desenvolvedor de sistemas web e sites desde os meus 13 anos, especializado em desenvolvimento mobile para Android e iOS em Flutter/Dart. Sou desenvolvedor Full stack, porém atuo mais com o Back-end, e atuo como freelancer.
             </p>
-        </div>
+        </section>
 
-        <!-- Minhas áreas -->
+        <!-- Dev Categories -->
         <div class="dev-categories">
             <div class="dev-category">
                 <i class="fas fa-laptop-code"></i> Dev. Web
@@ -174,52 +41,53 @@
             </div>
         </div>
 
-        <!-- Minhas tecnologias -->
+        <!-- Tech Stack -->
         <div class="tech-stack">
-            <span class="tech-badge" data-tooltip="HyperText Markup Language">HTML</span>
-            <span class="tech-badge" data-tooltip="Cascading Style Sheets">CSS</span>
-            <span class="tech-badge" data-tooltip="Linguagem de Programação Web">JavaScript</span>
-            <span class="tech-badge" data-tooltip="Framework Mobile Multiplataforma">Dart</span>
-            <span class="tech-badge" data-tooltip="Linguagem de Programação">Python</span>
-            <span class="tech-badge" data-tooltip="Biblioteca JavaScript">React</span>
-            <span class="tech-badge" data-tooltip="Runtime JavaScript">Node.js</span>
-            <span class="tech-badge" data-tooltip="Banco de Dados Relacional">SQL</span>
-            <span class="tech-badge" data-tooltip="Banco de Dados NoSQL">MongoDB</span>
+            <span class="tech-badge">HTML</span>
+            <span class="tech-badge">CSS</span>
+            <span class="tech-badge">JavaScript</span>
+            <span class="tech-badge">Dart</span>
+            <span class="tech-badge">Python</span>
+            <span class="tech-badge">React</span>
+            <span class="tech-badge">Node.js</span>
+            <span class="tech-badge">SQL</span>
+            <span class="tech-badge">MongoDB</span>
         </div>
 
-        <!-- Minhas redes -->
+        <!-- Social Links -->
         <div class="social-grid">
-            <a href="#" class="social-item" target="_blank">
+            <a href="https://github.com/ThiagoHungria" target="_blank" class="social-item">
                 <i class="fab fa-github"></i>
             </a>
-            <a href="#" class="social-item" target="_blank">
+            <a href="#" target="_blank" class="social-item">
                 <i class="fab fa-gitlab"></i>
             </a>
-            <a href="#" class="social-item" target="_blank">
+            <a href="https://linkedin.com/in/thiagohungria" target="_blank" class="social-item">
                 <i class="fab fa-linkedin"></i>
             </a>
-            <a href="#" class="social-item" target="_blank">
+            <a href="https://instagram.com/thiagohungria" target="_blank" class="social-item">
                 <i class="fab fa-instagram"></i>
             </a>
         </div>
 
-        <!-- Meus botões -->
+        <!-- Contact Buttons -->
         <div class="contact-section">
-            <a href="#" class="contact-button">
-                <i class="fas fa-briefcase"></i>
-                <span>Ver Portfólio</span>
+            <a href="#portfolio" class="contact-button portfolio-btn">
+                <i class="fas fa-briefcase"></i> Ver Portfólio
             </a>
-            <a href="#" class="contact-button">
-                <i class="fab fa-whatsapp"></i>
-                <span>Contato</span>
+            <a href="#" class="contact-button contact-btn">
+                <i class="fab fa-whatsapp"></i> WhatsApp
             </a>
         </div>
-    </div>
 
-    <!-- Rodapé centralizado -->
-    <div class="corner-footer">
-        <i class="fas fa-code"></i> com <i class="fas fa-heart"></i> por TH
-    </div>
+        <!-- Footer -->
+        <footer class="corner-footer">
+            &lt;/&gt; com ♥ por TH
+        </footer>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script src="script.js"></script>
 </body>
 
 </html>
