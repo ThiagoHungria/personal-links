@@ -24,6 +24,8 @@ body {
     min-height: 100vh;
     position: relative;
     overflow-x: hidden;
+    margin: 0;
+    padding: 0;
 }
 
 
@@ -333,19 +335,20 @@ body {
 .corner-footer {
     position: fixed;
     bottom: 0;
-    left: 0;
-    right: 0;
-    width: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: fit-content;
+    min-width: 150px;
     background: rgba(10, 10, 10, 0.95);
     backdrop-filter: blur(10px);
-    padding: 12px 20px;
+    padding: 8px 20px;
+    border-radius: 20px 20px 0 0;
     text-align: center;
-    font-size: var(--font-size-footer);
+    font-size: 0.85rem;
     z-index: 1000;
-    margin: 0;
-    transform: none;
-    border-radius: 0;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: none;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
 }
 
 
@@ -364,6 +367,7 @@ body {
         width: 100%;
         text-align: center;
         justify-content: center;
+        transition: transform 0.2s ease;
     }
     .tech-stack {
         gap: 0.6rem;
@@ -372,6 +376,7 @@ body {
     .tech-badge {
         padding: 0.6rem 1rem;
         font-size: 0.9rem;
+        transition: transform 0.2s ease;
     }
     .social-grid {
         gap: 1.2rem;
@@ -381,6 +386,7 @@ body {
         width: 50px;
         height: 50px;
         background: rgba(20, 20, 20, 0.9);
+        transition: transform 0.2s ease;
     }
     .contact-section {
         flex-direction: column;
@@ -392,6 +398,7 @@ body {
     .contact-button {
         width: 100%;
         justify-content: center;
+        transition: transform 0.2s ease;
     }
     @media (prefers-reduced-motion: no-preference) {
         .profile-image {
@@ -424,15 +431,16 @@ body {
         }
     }
     .container {
-        padding: 1rem 1rem 60px 1rem;
+        padding: 1rem 1rem 80px 1rem;
+        position: relative;
     }
     .corner-footer {
-        padding: 10px;
-        font-size: var(--font-size-footer);
+        padding: 8px 15px;
+        font-size: 0.8rem;
     }
     .social-item:active {
         transform: scale(0.95);
-        transition: transform 0.1s ease;
+        transition: transform 0.2s ease;
     }
     .contact-button {
         font-size: 0.9rem;
@@ -441,22 +449,27 @@ body {
     .contact-button:active {
         transform: scale(0.98);
         opacity: 0.9;
-        transition: all 0.1s ease;
+        transition: all 0.2s ease;
     }
     @media (hover: none) {
-        .social-item:hover,
-        .contact-button:hover,
         .dev-category:hover,
-        .tech-badge:hover {
+        .tech-badge:hover,
+        .social-item:hover,
+        .contact-button:hover {
             transform: none;
+            animation: none;
         }
-        .social-item:active,
-        .contact-button:active,
-        .dev-category:active,
-        .tech-badge:active {
-            transform: scale(0.95);
-            transition: transform 0.1s ease;
+        .dev-category:hover i {
+            transform: none;
+            color: inherit;
         }
+        .dev-category::before {
+            display: none;
+        }
+    }
+    * {
+        animation-duration: 0.1s !important;
+        transition-duration: 0.2s !important;
     }
 }
 
@@ -465,8 +478,8 @@ body {
     .tech-badge:active,
     .social-item:active,
     .contact-button:active {
-        transform: translateY(-2px);
-        transition: transform 0.1s ease;
+        transform: scale(0.95);
+        transition: transform 0.2s ease;
     }
 }
 
